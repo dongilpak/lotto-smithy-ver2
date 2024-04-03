@@ -1,0 +1,40 @@
+.lottoHeader {
+  width: 100%;
+  background: var(--outer-background);
+  padding: 16px;
+}
+
+.innerBox {
+  width: 100%;
+  background: var(--inner-background);
+  border-radius: 8px;
+  color: var(--gray-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// countdown
+.countdown {
+  font-size: 16px;
+}
+
+.countText {
+  color: var(--header-text);
+  font-weight: bold;
+}
+
+// reward
+.rewardTitle {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.rewardAmount {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.rewardWinner {
+  font-size: 20px;
+}

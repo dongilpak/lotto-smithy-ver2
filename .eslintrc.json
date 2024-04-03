@@ -9,7 +9,8 @@
     "prettier/prettier": [
       "error",
       {
-        "allowParens": true
+        "allowParens": true,
+        "endOfLine": "auto"
       }
     ]
   }
