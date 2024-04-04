@@ -3,7 +3,11 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/header.module.scss';
 import { useInterval } from '@/app/lib/utils';
 
-export default function Countdown() {
+type countdownProps = {
+  latest: number;
+};
+
+export default function Countdown({ latest }: countdownProps) {
   const [message, setMessage] = useState<string>('');
   const [remainingTime, setRemainingTime] = useState<string>('');
 
@@ -54,7 +58,7 @@ export default function Countdown() {
   return (
     <div className={styles.countdown}>
       <p>
-        제 <span className={styles.countText}>1114</span>회
+        제 <span className={styles.countText}>{latest + 1}</span>회
       </p>
       {message ? (
         <span className={styles.countText}>{message}</span>
