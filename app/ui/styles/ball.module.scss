@@ -1,0 +1,42 @@
+.balls {
+  display: flex;
+}
+
+.ball {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus {
+  margin-right: 4px;
+}
+
+.bonus {
+  display: flex;
+  align-items: center;
+}
+
+.singleDigits {
+  background-color: var(--single-digits);
+}
+
+.teens {
+  background-color: var(--teens);
+}
+
+.twenties {
+  background-color: var(--twenties);
+}
+
+.thirties {
+  background-color: var(--thirties);
+}
+
+.forties {
+  background-color: var(--forties);
+}

@@ -2,11 +2,11 @@
 
 :root {
   /* ball color */
-  --ball-10: #e1bc6c;
-  --ball-20: #6099d8;
-  --ball-30: #f27f72;
-  --ball-40: #aaaaaa;
-  --ball-45: #7bc76c;
+  --single-digits: #e1bc6c;
+  --teens: #6099d8;
+  --twenties: #f27f72;
+  --thirties: #aaaaaa;
+  --forties: #7bc76c;
 
   /* gray color */
   --gray-10: #fefefe;

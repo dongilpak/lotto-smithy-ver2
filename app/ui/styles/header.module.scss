@@ -1,0 +1,92 @@
+.lottoHeader {
+  width: 100%;
+  background: var(--outer-background);
+  padding: 16px;
+}
+
+.innerBox {
+  width: 100%;
+  background: var(--inner-background);
+  border-radius: 8px;
+  color: var(--gray-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0;
+}
+
+// countdown
+.countdown {
+  font-size: 16px;
+  display: none;
+}
+
+.countText {
+  color: var(--header-text);
+  font-weight: bold;
+}
+
+// result
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.resultTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.resultEmphasis {
+  color: var(--header-text);
+}
+
+// reward
+.rewardTitle {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.rewardAmount {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.rewardWinner {
+  font-size: 20px;
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .innerBox {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+  }
+
+  .countdown {
+    display: block;
+  }
+
+  .result {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .innerBox {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 8px;
+  }
+
+  .countdown {
+    display: block;
+  }
+
+  .result {
+    margin-bottom: 0;
+  }
+}
