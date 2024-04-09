@@ -18,3 +18,16 @@ export interface LottoData {
   firstWinamnt: number;
   firstPrzwnerCo: number;
 }
+
+export type Action = {
+  type: 'extraction';
+  payload: {
+    logics: string[];
+    count: number;
+  };
+};
+
+export type LottoContextValue = {
+  state: number[][];
+  dispatch: React.Dispatch<Action>;
+};

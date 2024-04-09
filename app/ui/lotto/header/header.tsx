@@ -1,8 +1,8 @@
 import { LottoData } from '@/app/lib/definitions';
-import styles from '../styles/header.module.scss';
+import styles from '../../styles/header.module.scss';
 import Countdown from './countdown';
 import Reward from './reward';
-import Balls from './balls';
+import Balls from '../balls';
 
 type headerProps = {
   data: LottoData;

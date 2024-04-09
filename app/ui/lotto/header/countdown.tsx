@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/header.module.scss';
+import styles from '../../styles/header.module.scss';
 import { useInterval } from '@/app/lib/utils';
 
 type countdownProps = {
