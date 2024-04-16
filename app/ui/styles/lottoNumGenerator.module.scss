@@ -63,6 +63,7 @@
 
 .methodBtn:has(input[type='checkbox']:checked) {
   background: var(--forties);
+  color: var(--gray-10);
 }
 
 .methodLabel {
