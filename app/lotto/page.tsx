@@ -1,15 +1,25 @@
 import { Metadata } from 'next';
-import Header from '../ui/lotto/header';
 import styles from './lotto.module.scss';
-import { LottoData } from '../lib/definitions';
+import { Action, LottoContextValue, LottoData } from '../lib/definitions';
+import LottoClient from './lottoClient';
 
 export const metadata: Metadata = {
   title: 'lotto',
 };
 
 export async function getData(): Promise<LottoData> {
+  const standard = Number(new Date('2002-12-07'));
+  const today = Number(new Date());
+  const diff = today - standard;
+
+  const period = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const round =
+    new Date().getDay() === 6 && new Date().getHours() < 21
+      ? Math.floor(period / 7)
+      : Math.floor(period / 7 + 1);
+
   const res = await fetch(
-    'https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=1113',
+    `https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=${round}`,
   );
 
   const data = res.json();
@@ -19,9 +29,5 @@ export async function getData(): Promise<LottoData> {
 
 export default async function page() {
   const data: LottoData = await getData();
-  return (
-    <main className={styles.lottoMain}>
-      <Header data={data} />
-    </main>
-  );
+  return <LottoClient data={data} />;
 }

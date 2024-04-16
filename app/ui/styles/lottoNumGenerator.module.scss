@@ -1,0 +1,183 @@
+.generator {
+  margin: 16px 0;
+  padding: 16px 24px;
+  border: 2px solid var(--twenties);
+  width: 360px;
+  background-color: var(--gray-20);
+}
+
+.methodSelector {
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.commonBox {
+  margin-right: 18px;
+}
+
+.specialBox {
+  margin-left: 18px;
+}
+
+.methodTitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.methodBtn {
+  width: 138px;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid var(--gray-50);
+  background: linear-gradient(var(--gray-10), var(--gray-30));
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.methodBtn:last-child {
+  margin-bottom: 0;
+}
+
+.methodIndex {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--single-digits);
+  color: var(--gray-10);
+  margin: 4px 0;
+  text-align: center;
+}
+
+.methodSpecial {
+  background-color: var(--twenties);
+}
+
+.methodBtn input[type='checkbox'] {
+  display: none;
+}
+
+.methodBtn:has(input[type='checkbox']:checked) {
+  background: var(--forties);
+  color: var(--gray-10);
+}
+
+.methodLabel {
+  padding: 0 16px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: bold;
+  height: 100%;
+}
+
+.caption {
+  font-size: 13px;
+  color: #2d4997;
+  letter-spacing: -0.5px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: right;
+}
+
+.applyAmount {
+  display: flex;
+  align-items: center;
+  margin-right: 48px;
+}
+
+.applyTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 16px;
+}
+
+.applyNum {
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+  background: var(--gray-40);
+  margin-right: 8px;
+}
+
+.applyNum input[type='radio'] {
+  display: none;
+}
+
+.applyLabel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.applyNum input[type='radio']:checked + .applyLabel {
+  background: var(--teens);
+  color: var(--gray-10);
+  border: 1px solid var(--teens);
+}
+
+.creation {
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background: var(--blue-btn);
+  padding: 4px 16px;
+  color: var(--gray-10);
+  cursor: pointer;
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .generator {
+    width: 600px;
+  }
+
+  .methodSelector {
+    justify-content: center;
+  }
+
+  .commonBox {
+    margin-right: 36px;
+  }
+
+  .specialBox {
+    margin-left: 36px;
+  }
+
+  .bottom {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1025px) {
+  .generator {
+    width: 472px;
+  }
+
+  .methodSelector {
+    justify-content: center;
+  }
+
+  .commonBox {
+    margin-right: 36px;
+  }
+
+  .specialBox {
+    margin-left: 36px;
+  }
+
+  .bottom {
+    justify-content: center;
+  }
+}

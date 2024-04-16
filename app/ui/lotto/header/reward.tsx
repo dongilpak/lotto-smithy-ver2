@@ -1,4 +1,4 @@
-import styles from '../styles/header.module.scss';
+import styles from '../../styles/header.module.scss';
 
 type rewardProps = {
   firstAccumamnt: number;
