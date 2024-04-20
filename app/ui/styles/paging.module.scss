@@ -1,0 +1,25 @@
+.paging {
+  display: flex;
+  justify-content: center;
+  .pageItem {
+    border: 1px solid var(--gray-50);
+    width: 30px;
+    height: 30px;
+    margin: 0 2px;
+    &:has(.pageInputRadio:checked) {
+      background: var(--blue-btn);
+      color: var(--gray-10);
+    }
+    .pageInputRadio {
+      display: none;
+    }
+    .pageLabel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+}

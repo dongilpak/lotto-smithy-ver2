@@ -1,0 +1,61 @@
+.lottoListComponent {
+  margin: 16px 0;
+  padding: 16px;
+  border: 2px solid var(--teens);
+  width: 360px;
+  height: 410px;
+  background-color: var(--gray-20);
+}
+
+.top {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--gray-40);
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .controlPanel {
+    button {
+      color: var(--gray-10);
+      font-size: 13px;
+      background: var(--dark-btn);
+      border-radius: 5px;
+      border: none;
+      padding: 4px 8px;
+      cursor: pointer;
+      &:first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.lottoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4px;
+  border-bottom: 2px solid var(--gray-40);
+  .lottoIndex {
+    font-weight: bold;
+  }
+  .controlLotto {
+    button {
+      font-size: 13px;
+      border-radius: 5px;
+      border: 1px solid var(--gray-40);
+      padding: 2px;
+      cursor: pointer;
+      &:first-child {
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
+.bottom {
+  margin-top: 24px;
+}

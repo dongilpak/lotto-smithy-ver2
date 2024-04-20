@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from '../../styles/lottoNumGenerator.module.scss';
 import { LottoContext } from '@/app/lotto/lottoClient';
 import { generateLottoArrays } from '@/app/lib/extractionControl';
@@ -51,6 +51,12 @@ export default function LottoNumGenerator() {
   const { dispatch } = useContext(LottoContext);
 
   const handleCreateBtn = () => {
+    if (selectedMethods.length === 0 || selectedQuantity === '') {
+      setSelectedQuantity('');
+      setSelectedMethods([]);
+      return alert('추출방법 또는 적용수량을 선택해 주세요.');
+    }
+
     const extractionLottos = generateLottoArrays(
       selectedMethods,
       selectedQuantity,
