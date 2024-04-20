@@ -19,10 +19,18 @@ export interface LottoData {
   firstPrzwnerCo: number;
 }
 
-export type LottoAction = {
-  type: 'EXTRACTION';
-  lottos: number[][];
-};
+export type LottoAction =
+  | {
+      type: 'EXTRACTION';
+      lottos: number[][];
+    }
+  | {
+      type: 'INITIALIZE';
+    }
+  | {
+      type: 'DELETELOTTO';
+      lottos: number[][];
+    };
 
 export type Lottos = {
   lottos: number[][];

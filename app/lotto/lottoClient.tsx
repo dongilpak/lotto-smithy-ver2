@@ -19,10 +19,20 @@ const initialState: Lottos = {
 const reducer = (state: Lottos, action: LottoAction): Lottos => {
   switch (action.type) {
     case 'EXTRACTION':
-      const updatedLottos = [...action.lottos, ...state.lottos].slice(0, 30);
+      const updatedLottos = [...action.lottos, ...state.lottos].slice(0, 50);
       return {
         ...state,
         lottos: updatedLottos,
+      };
+    case 'INITIALIZE':
+      return {
+        ...state,
+        lottos: [],
+      };
+    case 'DELETELOTTO':
+      return {
+        ...state,
+        lottos: [...action.lottos],
       };
     default:
       return state;
