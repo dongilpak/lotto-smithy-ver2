@@ -1,0 +1,65 @@
+.suggestionComponent {
+  margin: 16px 0;
+  padding: 16px;
+  border: 2px solid var(--forties);
+  width: 360px;
+  background-color: var(--gray-20);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .suggestionLottos {
+    display: flex;
+    .suggestionBalls {
+      display: flex;
+      margin-bottom: 4px;
+      border-bottom: 2px solid var(--gray-40);
+      padding: 10px 0;
+      .saveLotto {
+        margin-left: 10px;
+        font-size: 13px;
+        font-weight: bold;
+        border-radius: 5px;
+        border: 1px solid var(--gray-40);
+        padding: 2px 6px;
+        cursor: pointer;
+      }
+    }
+
+    .rightcolumn {
+      display: none;
+    }
+  }
+  .bottom {
+    margin-top: 16px;
+    .refresh {
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      background: var(--blue-btn);
+      padding: 4px 16px;
+      color: var(--gray-10);
+      cursor: pointer;
+    }
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .suggestionComponent {
+    width: 600px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .suggestionComponent {
+    width: 960px;
+    .suggestionLottos {
+      .rightcolumn {
+        margin-left: 72px;
+        display: block;
+      }
+    }
+  }
+}
