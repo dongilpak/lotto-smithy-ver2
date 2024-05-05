@@ -2,6 +2,7 @@
 
 import { createContext, useReducer } from 'react';
 import {
+  InitialState,
   LottoAction,
   LottoContextValue,
   LottoData,
@@ -11,12 +12,14 @@ import Header from '../ui/lotto/header/header';
 import LottoNumGenerator from '../ui/lotto/lottoNumGenerator/lottoNumGenerator';
 import styles from './lotto.module.scss';
 import ShowGeneratedLotto from '../ui/lotto/showGeneratedLotto/showGeneratedLotto';
+import SuggestionLotto from '../ui/lotto/suggestionLotto/suggestionLotto';
 
-const initialState: Lottos = {
+const initialState: InitialState = {
   lottos: [],
+  suggestion: [],
 };
 
-const reducer = (state: Lottos, action: LottoAction): Lottos => {
+const reducer = (state: InitialState, action: LottoAction): InitialState => {
   switch (action.type) {
     case 'EXTRACTION':
       const updatedLottos = [...action.lottos, ...state.lottos].slice(0, 50);
@@ -34,6 +37,13 @@ const reducer = (state: Lottos, action: LottoAction): Lottos => {
         ...state,
         lottos: [...action.lottos],
       };
+    case 'SUGGESTION':
+      const setSuggestion = [...action.suggestion];
+      return {
+        ...state,
+        suggestion: setSuggestion,
+      };
+
     default:
       return state;
   }
@@ -56,6 +66,7 @@ const LottoClient = ({ data }: ClientProps) => {
         <Header data={data} />
         <LottoNumGenerator />
         <ShowGeneratedLotto lottos={state.lottos} />
+        <SuggestionLotto suggestion={state.suggestion} />
       </main>
     </LottoContext.Provider>
   );
