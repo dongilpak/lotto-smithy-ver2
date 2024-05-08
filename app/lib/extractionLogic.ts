@@ -1,11 +1,5 @@
-interface LottoNumber {
-  sections: number[][];
-}
-
-interface MainSectionsValue {
-  mainIndices: number[];
-  numbers: number[];
-}
+import { MainSectionsValue } from './definitions/interfaces';
+import { LottoNumber } from './definitions/types';
 
 const numStorage: LottoNumber = {
   sections: [

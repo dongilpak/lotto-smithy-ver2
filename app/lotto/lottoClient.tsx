@@ -1,18 +1,13 @@
 'use client';
 
 import { createContext, useReducer } from 'react';
-import {
-  InitialState,
-  LottoAction,
-  LottoContextValue,
-  LottoData,
-  Lottos,
-} from '../lib/definitions';
-import Header from '../ui/lotto/header/header';
+import Header from '../ui/header/header';
 import LottoNumGenerator from '../ui/lotto/lottoNumGenerator/lottoNumGenerator';
 import styles from './lotto.module.scss';
 import ShowGeneratedLotto from '../ui/lotto/showGeneratedLotto/showGeneratedLotto';
 import SuggestionLotto from '../ui/lotto/suggestionLotto/suggestionLotto';
+import { InitialState, lottoDataProps } from '../lib/definitions/interfaces';
+import { LottoAction, LottoContextValue } from '../lib/definitions/types';
 
 const initialState: InitialState = {
   lottos: [],
@@ -49,23 +44,21 @@ const reducer = (state: InitialState, action: LottoAction): InitialState => {
   }
 };
 
-type ClientProps = {
-  data: LottoData;
-};
-
 export const LottoContext = createContext<LottoContextValue>({
   state: initialState,
   dispatch: () => {},
 });
 
-const LottoClient = ({ data }: ClientProps) => {
+const LottoClient = ({ data }: lottoDataProps) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <LottoContext.Provider value={{ state, dispatch }}>
       <main className={styles.lottoMain}>
         <Header data={data} />
-        <LottoNumGenerator />
-        <ShowGeneratedLotto lottos={state.lottos} />
+        <div className={styles.combineCreation}>
+          <LottoNumGenerator />
+          <ShowGeneratedLotto lottos={state.lottos} />
+        </div>
         <SuggestionLotto suggestion={state.suggestion} />
       </main>
     </LottoContext.Provider>

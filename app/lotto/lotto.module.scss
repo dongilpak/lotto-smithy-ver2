@@ -18,5 +18,11 @@
 @media (min-width: 1025px) {
   .lottoMain {
     max-width: 1200px;
+    height: 100vh;
+    .combineCreation {
+      width: 960px;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }

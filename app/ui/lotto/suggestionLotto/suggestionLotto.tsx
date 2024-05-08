@@ -1,9 +1,9 @@
-import { Suggestion } from '@/app/lib/definitions';
 import React, { useContext, useEffect } from 'react';
-import Balls from '../balls';
+import Balls from '../balls/balls';
 import { generateLottoArrays } from '@/app/lib/extractionControl';
 import { LottoContext } from '@/app/lotto/lottoClient';
-import styles from '../../styles/suggestionLotto.module.scss';
+import styles from './suggestionLotto.module.scss';
+import { Suggestion } from '@/app/lib/definitions/interfaces';
 
 export default function SuggestionLotto({ suggestion }: Suggestion) {
   const { dispatch } = useContext(LottoContext);

@@ -1,7 +1,7 @@
-import { Lottos } from '@/app/lib/definitions';
-import Balls from '../balls';
+import { Lottos } from '@/app/lib/definitions/interfaces';
+import Balls from '../balls/balls';
 import Paging from './paging';
-import styles from '../../styles/showGeneratedLotto.module.scss';
+import styles from './showGeneratedLotto.module.scss';
 import { LottoContext } from '@/app/lotto/lottoClient';
 import { useContext, useState } from 'react';
 

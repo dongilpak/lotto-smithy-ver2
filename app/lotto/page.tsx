@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
-import styles from './lotto.module.scss';
-import { Action, LottoContextValue, LottoData } from '../lib/definitions';
 import LottoClient from './lottoClient';
+import { LottoData } from '../lib/definitions/types';
 
 export const metadata: Metadata = {
   title: 'lotto',

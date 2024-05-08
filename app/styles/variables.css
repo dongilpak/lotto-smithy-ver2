@@ -1,0 +1,25 @@
+:root {
+  /* ball color */
+  --single-digits: #e1bc6c;
+  --teens: #6099d8;
+  --twenties: #f27f72;
+  --thirties: #aaaaaa;
+  --forties: #7bc76c;
+
+  /* gray color */
+  --gray-10: #fefefe;
+  --gray-20: #f9f9f9;
+  --gray-30: #e6e6e6;
+  --gray-40: #d9d9d9;
+  --gray-50: #cccccc;
+  --gray-60: #939393;
+
+  /* header color */
+  --header-text: #fefb18;
+  --inner-background: radial-gradient(#536089, #35383e);
+  --outer-background: radial-gradient(#2d4997, #112048);
+
+  /* button color */
+  --blue-btn: linear-gradient(#008adb, #0795db);
+  --dark-btn: linear-gradient(#555555, #5e5e5e);
+}

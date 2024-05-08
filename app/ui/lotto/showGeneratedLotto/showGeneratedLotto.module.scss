@@ -78,5 +78,16 @@
 @media (min-width: 1025px) {
   .lottoListComponent {
     width: 472px;
+    height: 462px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    .top {
+      width: 425px;
+    }
+    .lottoContainer {
+      width: 425px;
+    }
   }
 }

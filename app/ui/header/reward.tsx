@@ -1,10 +1,5 @@
-import styles from '../../styles/header.module.scss';
-
-type rewardProps = {
-  firstAccumamnt: number;
-  firstPrzwnerCo: number;
-  firstWinamnt: number;
-};
+import { rewardProps } from '@/app/lib/definitions/interfaces';
+import styles from './header.module.scss';
 
 export default function Reward({
   firstAccumamnt,

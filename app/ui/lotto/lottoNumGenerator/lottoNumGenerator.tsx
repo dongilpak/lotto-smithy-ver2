@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
-import styles from '../../styles/lottoNumGenerator.module.scss';
+import styles from './lottoNumGenerator.module.scss';
 import { LottoContext } from '@/app/lotto/lottoClient';
 import { generateLottoArrays } from '@/app/lib/extractionControl';
+import { Methods } from '@/app/lib/definitions/interfaces';
 
 const commons = [
   {
@@ -38,12 +39,6 @@ const specials = [
     funcName: 'selectThreeFromTwo',
   },
 ];
-
-interface Methods {
-  index: number;
-  text: string;
-  funcName: string;
-}
 
 export default function LottoNumGenerator() {
   const [selectedMethods, setSelectedMethods] = useState<string[]>([]);

@@ -1,14 +1,10 @@
-import { LottoData } from '@/app/lib/definitions';
-import styles from '../../styles/header.module.scss';
+import styles from './header.module.scss';
 import Countdown from './countdown';
 import Reward from './reward';
-import Balls from '../balls';
+import Balls from '../lotto/balls/balls';
+import { lottoDataProps } from '@/app/lib/definitions/interfaces';
 
-type headerProps = {
-  data: LottoData;
-};
-
-export default function Header({ data }: headerProps) {
+export default function Header({ data }: lottoDataProps) {
   const balls = [
     data.drwtNo1,
     data.drwtNo2,
