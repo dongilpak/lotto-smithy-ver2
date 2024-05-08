@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { CallbackFunction } from './definitions';
+import { CallbackFunction } from '../definitions/interfaces';
 
 export const useInterval = (callback: CallbackFunction, delay: number) => {
   const savedCallback = useRef<CallbackFunction | null>(null);

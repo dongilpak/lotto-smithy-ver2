@@ -1,13 +1,8 @@
 import { useEffect } from 'react';
-import styles from '../../styles/paging.module.scss';
+import styles from './paging.module.scss';
+import { PagingProps } from '@/app/lib/definitions/interfaces';
 
-type Paging = {
-  length: number;
-  pageNum: number;
-  setPageNum: (page: number) => void;
-};
-
-export default function Paging({ length, pageNum, setPageNum }: Paging) {
+export default function Paging({ length, pageNum, setPageNum }: PagingProps) {
   const pageLength = length % 5 === 0 ? length / 5 : length / 5 + 1;
   const listOfPages = Array.from({ length: pageLength }, (_, i) => i + 1);
   useEffect(() => {

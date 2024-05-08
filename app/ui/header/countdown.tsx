@@ -1,11 +1,8 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import styles from '../../styles/header.module.scss';
-import { useInterval } from '@/app/lib/utils';
-
-type countdownProps = {
-  latest: number;
-};
+import React, { useState } from 'react';
+import styles from './header.module.scss';
+import { useInterval } from '@/app/lib/utils/useInterval';
+import { countdownProps } from '@/app/lib/definitions/interfaces';
 
 export default function Countdown({ latest }: countdownProps) {
   const [message, setMessage] = useState<string>('');

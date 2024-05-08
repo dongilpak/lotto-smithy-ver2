@@ -1,10 +1,7 @@
-import styles from '../styles/ball.module.scss';
+import { Part } from '@/app/lib/definitions/types';
+import styles from './ball.module.scss';
 import { FaPlus } from 'react-icons/fa6';
-
-interface Part {
-  range: number[];
-  name: string;
-}
+import { ballsProps } from '@/app/lib/definitions/interfaces';
 
 const parts: Part[] = [
   { range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], name: 'singleDigits' },
@@ -17,11 +14,6 @@ const parts: Part[] = [
 const getPartNameForNumber = (num: number): string | undefined => {
   const part = parts.find(p => p.range.includes(num));
   return part?.name;
-};
-
-type ballsProps = {
-  balls: number[];
-  bonus?: number;
 };
 
 export default function Balls({ balls, bonus }: ballsProps) {
