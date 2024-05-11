@@ -15,12 +15,19 @@ export default function ShowGeneratedLotto({ lottos }: Lottos) {
   };
 
   const handleDeleteLotto = (index: number) => {
-    const availableLottos = [...lottos];
+    const availableLottos = lottos;
     const deleteIndex = index + pageNum * 5 - 5;
     availableLottos.splice(deleteIndex, 1);
     dispatch({
       type: 'DELETELOTTO',
       lottos: availableLottos,
+    });
+  };
+
+  const handleSaveLotto = (lotto: number[]) => {
+    dispatch({
+      type: 'SAVECOOKIE',
+      lotto,
     });
   };
 
@@ -49,7 +56,12 @@ export default function ShowGeneratedLotto({ lottos }: Lottos) {
           >
             삭제
           </button>
-          <button className={styles.saveLotto}>저장</button>
+          <button
+            className={styles.saveLotto}
+            onClick={() => handleSaveLotto(lotto)}
+          >
+            저장
+          </button>
         </div>
       </div>
     ));

@@ -14,6 +14,7 @@ export interface lottoDataProps {
 export interface InitialState {
   lottos: number[][];
   suggestion: number[][];
+  cookieLottos: number[][];
 }
 
 // show generated lotto props

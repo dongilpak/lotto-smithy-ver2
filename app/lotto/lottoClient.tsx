@@ -8,10 +8,12 @@ import ShowGeneratedLotto from '../ui/lotto/showGeneratedLotto/showGeneratedLott
 import SuggestionLotto from '../ui/lotto/suggestionLotto/suggestionLotto';
 import { InitialState, lottoDataProps } from '../lib/definitions/interfaces';
 import { LottoAction, LottoContextValue } from '../lib/definitions/types';
+import Cookies from 'js-cookie';
 
 const initialState: InitialState = {
   lottos: [],
   suggestion: [],
+  cookieLottos: [],
 };
 
 const reducer = (state: InitialState, action: LottoAction): InitialState => {
@@ -38,6 +40,27 @@ const reducer = (state: InitialState, action: LottoAction): InitialState => {
         ...state,
         suggestion: setSuggestion,
       };
+    case 'SAVECOOKIE':
+      const newCookieLottos = [action.lotto, ...state.cookieLottos].slice(
+        0,
+        30,
+      );
+      Cookies.set('lottos', JSON.stringify(newCookieLottos), { expires: 0.5 });
+      return {
+        ...state,
+        cookieLottos: newCookieLottos,
+      };
+    case 'DELETECOOKIE':
+      const updateCookieLottos = state.cookieLottos.filter(
+        (_, i) => i !== action.index,
+      );
+      Cookies.set('lottos', JSON.stringify(updateCookieLottos), {
+        expires: 0.5,
+      });
+      return {
+        ...state,
+        cookieLottos: updateCookieLottos,
+      };
 
     default:
       return state;
@@ -50,7 +73,12 @@ export const LottoContext = createContext<LottoContextValue>({
 });
 
 const LottoClient = ({ data }: lottoDataProps) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, {
+    ...initialState,
+    cookieLottos: Cookies.get('lottos')
+      ? JSON.parse(Cookies.get('lottos') as string)
+      : [],
+  });
   return (
     <LottoContext.Provider value={{ state, dispatch }}>
       <main className={styles.lottoMain}>

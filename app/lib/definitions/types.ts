@@ -30,6 +30,14 @@ export type LottoAction =
   | {
       type: 'SUGGESTION';
       suggestion: number[][];
+    }
+  | {
+      type: 'SAVECOOKIE';
+      lotto: number[];
+    }
+  | {
+      type: 'DELETECOOKIE';
+      index: number;
     };
 
 // lotto context
