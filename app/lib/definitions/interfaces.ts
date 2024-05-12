@@ -14,6 +14,7 @@ export interface lottoDataProps {
 export interface InitialState {
   lottos: number[][];
   suggestion: number[][];
+  cookieLottos: number[][];
 }
 
 // show generated lotto props
@@ -62,4 +63,11 @@ export interface PagingProps {
   length: number;
   pageNum: number;
   setPageNum: (page: number) => void;
+}
+
+// savedLottoModal
+
+export interface SavedLottoModalProps {
+  isOpen: boolean;
+  onClose: () => void;
 }

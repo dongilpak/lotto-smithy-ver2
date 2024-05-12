@@ -30,6 +30,14 @@ export type LottoAction =
   | {
       type: 'SUGGESTION';
       suggestion: number[][];
+    }
+  | {
+      type: 'SAVECOOKIE';
+      lotto: number[];
+    }
+  | {
+      type: 'DELETECOOKIE';
+      index: number;
     };
 
 // lotto context
@@ -37,6 +45,7 @@ export type LottoContextValue = {
   state: {
     lottos: number[][];
     suggestion: number[][];
+    cookieLottos: number[][];
   };
   dispatch: React.Dispatch<LottoAction>;
 };

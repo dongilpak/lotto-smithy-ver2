@@ -12,6 +12,13 @@ export default function SuggestionLotto({ suggestion }: Suggestion) {
     generateSuggestionLottos();
   }, []);
 
+  const handleSaveLotto = (lotto: number[]) => {
+    dispatch({
+      type: 'SAVECOOKIE',
+      lotto,
+    });
+  };
+
   const generateSuggestionLottos = () => {
     const methods = [
       'selectTwoOneAnother',
@@ -34,7 +41,11 @@ export default function SuggestionLotto({ suggestion }: Suggestion) {
     return suggestion.slice(startIndex, endIndex).map((lotto, i) => (
       <div className={styles.suggestionBalls} key={i}>
         <Balls balls={lotto} />
-        <button type="button" className={styles.saveLotto}>
+        <button
+          type="button"
+          className={styles.saveLotto}
+          onClick={() => handleSaveLotto(lotto)}
+        >
           저장
         </button>
       </div>

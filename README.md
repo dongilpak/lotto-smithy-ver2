@@ -48,21 +48,25 @@ lotto-smithy-ver2
 │ │ ├─ header.module.scss
 │ │ ├─ header.tsx
 │ │ └─ reward.tsx
-│ └─ lotto
-│ ├─ balls
-│ │ ├─ ball.module.scss
-│ │ └─ balls.tsx
-│ ├─ lottoNumGenerator
-│ │ ├─ lottoNumGenerator.module.scss
-│ │ └─ lottoNumGenerator.tsx
-│ ├─ showGeneratedLotto
-│ │ ├─ paging.module.scss
-│ │ ├─ paging.tsx
-│ │ ├─ showGeneratedLotto.module.scss
-│ │ └─ showGeneratedLotto.tsx
-│ └─ suggestionLotto
-│ ├─ suggestionLotto.module.scss
-│ └─ suggestionLotto.tsx
+│ ├─ lotto
+│ │ ├─ balls
+│ │ │ ├─ ball.module.scss
+│ │ │ └─ balls.tsx
+│ │ ├─ lottoNumGenerator
+│ │ │ ├─ lottoNumGenerator.module.scss
+│ │ │ └─ lottoNumGenerator.tsx
+│ │ ├─ savedLottoModal
+│ │ │ ├─ savedLottoModal.module.scss
+│ │ │ └─ savedLottoModal.tsx
+│ │ ├─ showGeneratedLotto
+│ │ │ ├─ showGeneratedLotto.module.scss
+│ │ │ └─ showGeneratedLotto.tsx
+│ │ └─ suggestionLotto
+│ │ ├─ suggestionLotto.module.scss
+│ │ └─ suggestionLotto.tsx
+│ └─ paging
+│ ├─ paging.module.scss
+│ └─ paging.tsx
 ├─ next.config.mjs
 ├─ package-lock.json
 ├─ package.json
