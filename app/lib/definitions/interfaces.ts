@@ -64,3 +64,10 @@ export interface PagingProps {
   pageNum: number;
   setPageNum: (page: number) => void;
 }
+
+// savedLottoModal
+
+export interface SavedLottoModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}

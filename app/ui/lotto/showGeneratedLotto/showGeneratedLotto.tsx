@@ -1,17 +1,28 @@
 import { Lottos } from '@/app/lib/definitions/interfaces';
 import Balls from '../balls/balls';
-import Paging from './paging';
+import Paging from '../../paging/paging';
 import styles from './showGeneratedLotto.module.scss';
 import { LottoContext } from '@/app/lotto/lottoClient';
 import { useContext, useState } from 'react';
+import SavedLottoModal from '../savedLottoModal/savedLottoModal';
 
 export default function ShowGeneratedLotto({ lottos }: Lottos) {
   const [pageNum, setPageNum] = useState<number>(1);
   const { dispatch } = useContext(LottoContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleInitialize = () => {
     dispatch({
       type: 'INITIALIZE',
     });
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   const handleDeleteLotto = (index: number) => {
@@ -74,7 +85,9 @@ export default function ShowGeneratedLotto({ lottos }: Lottos) {
           <button className={styles.initialize} onClick={handleInitialize}>
             초기화
           </button>
-          <button className={styles.savedLists}>저장목록</button>
+          <button className={styles.savedLists} onClick={handleOpenModal}>
+            저장목록
+          </button>
         </div>
       </div>
       <div className={styles.main}>{renderLottoNumItems()}</div>
@@ -85,6 +98,7 @@ export default function ShowGeneratedLotto({ lottos }: Lottos) {
           setPageNum={setPageNum}
         />
       </div>
+      <SavedLottoModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 }

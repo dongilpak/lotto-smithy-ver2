@@ -45,6 +45,7 @@ export type LottoContextValue = {
   state: {
     lottos: number[][];
     suggestion: number[][];
+    cookieLottos: number[][];
   };
   dispatch: React.Dispatch<LottoAction>;
 };
